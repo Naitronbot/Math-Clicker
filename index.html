@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>Math Clicker</title>
@@ -9,621 +10,189 @@
   https://mathscribe.com/author/jqmath.html
   -->
   <link rel="stylesheet" href="./jqmath/jqmath-0.4.3.css">
-  <script src="jqmath/jquery-1.4.3.min.js"></script>
-  <script src="jqmath/jqmath-etc-0.4.6.min.js" charset="utf-8"></script>
-<style>
-.mainWindow {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-evenly;
-  align-items: stretch;
-  height: 100vh;
-  margin: 0;
-}
+  <script src="./jqmath/jquery-1.4.3.min.js"></script>
+  <script src="./jqmath/jqmath-etc-0.4.6.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="./style.css">
+</head>
 
-body {
-  margin: 0;
-}
-
-.buttonContainer {
-  background-color: #116466;
-  width: min(30vw, 300px);
-  height: min(20vw, 200px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 20px;
-  cursor: pointer;
-  user-select: none;
-}
-
-.buttonContainer p {
-  font-size: min(6vw, 60px);
-}
-
-.pointsWindow {
-  background-color: white;
-  width: min(25vw, 250px);
-  height: min(12vw, 120px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 20px;
-  border: solid 1px black;
-  margin: 35px;
-}
-
-.pointsText {
-  font-size: min(4vw, 40px);
-  margin: 0;
-  color: black;
-}
-
-.pps {
-  font-size: min(2vw, 20px);
-}
-
-h1 {
-  text-align: center;
-  font-weight: lighter;
-  font-size: min(6vw, 60px);
-  color: white;
-  margin: 35px;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.gameWindow {
-  order: 1;
-  background-color: #2C3531;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  overflow-y: auto;
-}
-
-p {
-  display: inline-block;
-  white-space: pre;
-  color: #D1E8E2;
-}
-
-.menuWindow {
-  order: 2;
-  background-color: #116466;
-  width: 40vw;
-  max-width: 350px;
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  overflow-y: auto;
-}
-
-div, h1 {
-  display: inline-block;
-  text-align: center;
-}
-
-.imaginary {
-  font-size: min(3.5vw, 35px);
-}
-
-.menuTabs {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-}
-
-.tab {
-  width: 50%;
-  cursor: pointer;
-  font-size: min(2.5vw, 25px);
-  background: rgba(0, 0, 0, 0.2);
-}
-
-.productionMenu {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.upgradesMenu {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.productionCard {
-  width: 87.5%;
-  padding: 7.5px;
-  background: rgba(255, 255, 255, 0.2);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
-  cursor: pointer;
-  padding-top: min(1vw, 10px);
-  padding-bottom: min(1vw, 10px);
-}
-
-.selected {
-  background: rgba(0, 0, 0, 0);
-}
-
-.cardImageHolder {
-  width: min(8vw, 80px);
-  height: min(8vw, 80px);
-  background-color: #D1E8E2;
-  border-radius: 10px;
-  padding: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-}
-
-.cardImage {
-  height: min(8vw, 80px);
-}
-
-.cardText {
-  font-size: min(2.5vw, 25px);
-}
-
-.invisible {
-  display: none;
-}
-
-.textDiv p {
-  margin: 0;
-}
-
-.cardCost {
-  font-size: min(2vw, 20px);
-}
-
-.prodNumber {
-  font-size: min(5vw, 50px);
-  margin: 0;
-}
-
-.transparent {
-  opacity: 0.25;
-  cursor: default;
-}
-
-.cardImageQuad {
-  height: auto;
-  width: min(12vw, 120px);
-}
-
-.cardImageHolderQuad {
-  width: min(12vw, 120px);
-}
-
-/*
-https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-Flexbox tutorial
-*/
-
-</style>
-  </head>
-  <body>
-    <div class="mainWindow">
-      <div class="gameWindow">
+<body>
+  <div class="mainWindow">
+    <div class="gameWindow">
+      <div>
+        <h1>$$Math\text" "Cl$$</h1>
+        <h1 class="imaginary">$$&#x221A;{-1}$$</h1>
+        <h1>$$cker$$</h1>
+      </div>
+      <div class="buttonContainer" onclick="buttonClick()">
+        <p id="buttonText">$$&#8721;↙{n=0}↖&infin;1$$</p>
+      </div>
+      <div class="pointsWindow">
         <div>
-        <h1>$$Math\text" "Cl$$</h1><h1 class="imaginary">$$&#x221A;{-1}$$</h1><h1>$$cker$$</h1></div>
-        <div class="buttonContainer" onclick="buttonClick()"><p id="buttonText">$$&#8721;↙{n=0}↖&infin;1$$</p></div>
-        <div class="pointsWindow">
-          <div>
-            <p class="pointsText">p = </p><p id="points" class="pointsText">0</p>
-          </div>
-          <div>
-            <p class="pointsText pps" id="pointRate"></p>
-          </div>
+          <p class="pointsText">p = </p>
+          <p id="points" class="pointsText">0</p>
+        </div>
+        <div>
+          <p class="pointsText pps" id="pointRate"></p>
         </div>
       </div>
-      <div class="menuWindow">
-        <div class="menuTabs">
-          <div class="tab selected" id="prodTab" onclick="prodButton()"><p>Production</p></div>
-          <div class="tab" id="upgTab" onclick="upgButton()"><p>Upgrades</p></div>
+    </div>
+    <div class="menuWindow">
+      <div class="menuTabs">
+        <div class="tab selected" id="prodTab" onclick="prodButton()">
+          <p>Production</p>
         </div>
-        <div class="productionMenu" id="prodMenu">
-        
+        <div class="tab" id="upgTab" onclick="upgButton()">
+          <p>Upgrades</p>
+        </div>
+      </div>
+      <div class="productionMenu" id="prodMenu">
+
         <!--Pencil Card Code-->
-          <div class="productionCard transparent" id="pencilCard" onClick="buyPencil()">
-            <div>
-              <p class="prodNumber" id="pencilNum">0</p>
-            </div>
-            <div class="textDiv">
-              <p class="cardText">Pencil</p><br><p class="cardCost" id="pencilCost">p = 16</p>
-            </div>
-            <div class="cardImageHolder">
-              <img class="cardImage" src="media/pencil.png">
-            </div>
+        <div class="productionCard transparent" id="pencilCard" onClick="buyPencil()">
+          <div>
+            <p class="prodNumber" id="pencilNum">0</p>
           </div>
-          
-          <!--Phone Card Code-->
-          <div class="productionCard transparent" id="phoneCard" onClick="buyPhone()">
-            <div>
-              <p class="prodNumber" id="phoneNum">0</p>
-            </div>
-            <div class="textDiv">
-              <p class="cardText">Phone</p><br><p class="cardCost" id="phoneCost">p = 256</p>
-            </div>
-            <div class="cardImageHolder">
-              <img class="cardImage" src="media/phone.png">
-            </div>
+          <div class="textDiv">
+            <p class="cardText">Pencil</p><br>
+            <p class="cardCost" id="pencilCost">p = 16</p>
           </div>
-          
-          <!--Calc1 Card Code-->
-          <div class="productionCard transparent" id="calc1Card" onClick="buyCalc1()">
-            <div>
-              <p class="prodNumber" id="calc1Num">0</p>
-            </div>
-            <div class="textDiv">
-              <p class="cardText">TI-30Xa</p><br><p class="cardCost" id="calc1Cost">p = 2048</p>
-            </div>
-            <div class="cardImageHolder">
-              <img class="cardImage" src="media/calc1.png">
-            </div>
+          <div class="cardImageHolder">
+            <img class="cardImage" src="media/pencil.png">
           </div>
-          
-           <!--Calc2 Card Code-->
-          <div class="productionCard transparent" id="calc2Card" onClick="buyCalc2()">
-            <div>
-              <p class="prodNumber" id="calc2Num">0</p>
-            </div>
-            <div class="textDiv">
-              <p class="cardText">TI-30X IIS</p><br><p class="cardCost" id="calc2Cost">p = 16384</p>
-            </div>
-            <div class="cardImageHolder">
-              <img class="cardImage" src="media/calc2.png">
-            </div>
-          </div>
-          
-          <!--Calc3 Card Code-->
-          <div class="productionCard transparent" id="calc3Card" onClick="buyCalc3()">
-            <div>
-              <p class="prodNumber" id="calc3Num">0</p>
-            </div>
-            <div class="textDiv">
-              <p class="cardText">TI-84 Plus</p><br><p class="cardCost" id="calc3Cost">p = 131072</p>
-            </div>
-            <div class="cardImageHolder">
-              <img class="cardImage" src="media/calc3.png">
-            </div>
-          </div>
-          
-          <!--Desmos Card Code-->
-          <div class="productionCard transparent" id="desmosCard" onClick="buyDesmos()">
-            <div>
-              <p class="prodNumber" id="desmosNum">0</p>
-            </div>
-            <div class="textDiv">
-              <p class="cardText">Desmos</p><br><p class="cardCost" id="desmosCost">p = 2097152</p>
-            </div>
-            <div class="cardImageHolder">
-              <img class="cardImage" src="media/desmos.png">
-            </div>
-          </div>
-          
         </div>
-        
-        <div class="upgradesMenu invisible" id="upgMenu">
-        
+
+        <!--Phone Card Code-->
+        <div class="productionCard transparent" id="phoneCard" onClick="buyPhone()">
+          <div>
+            <p class="prodNumber" id="phoneNum">0</p>
+          </div>
+          <div class="textDiv">
+            <p class="cardText">Phone</p><br>
+            <p class="cardCost" id="phoneCost">p = 256</p>
+          </div>
+          <div class="cardImageHolder">
+            <img class="cardImage" src="media/phone.png">
+          </div>
+        </div>
+
+        <!--Calc1 Card Code-->
+        <div class="productionCard transparent" id="calc1Card" onClick="buyCalc1()">
+          <div>
+            <p class="prodNumber" id="calc1Num">0</p>
+          </div>
+          <div class="textDiv">
+            <p class="cardText">TI-30Xa</p><br>
+            <p class="cardCost" id="calc1Cost">p = 2048</p>
+          </div>
+          <div class="cardImageHolder">
+            <img class="cardImage" src="media/calc1.png">
+          </div>
+        </div>
+
+        <!--Calc2 Card Code-->
+        <div class="productionCard transparent" id="calc2Card" onClick="buyCalc2()">
+          <div>
+            <p class="prodNumber" id="calc2Num">0</p>
+          </div>
+          <div class="textDiv">
+            <p class="cardText">TI-30X IIS</p><br>
+            <p class="cardCost" id="calc2Cost">p = 16384</p>
+          </div>
+          <div class="cardImageHolder">
+            <img class="cardImage" src="media/calc2.png">
+          </div>
+        </div>
+
+        <!--Calc3 Card Code-->
+        <div class="productionCard transparent" id="calc3Card" onClick="buyCalc3()">
+          <div>
+            <p class="prodNumber" id="calc3Num">0</p>
+          </div>
+          <div class="textDiv">
+            <p class="cardText">TI-84 Plus</p><br>
+            <p class="cardCost" id="calc3Cost">p = 131072</p>
+          </div>
+          <div class="cardImageHolder">
+            <img class="cardImage" src="media/calc3.png">
+          </div>
+        </div>
+
+        <!--Desmos Card Code-->
+        <div class="productionCard transparent" id="desmosCard" onClick="buyDesmos()">
+          <div>
+            <p class="prodNumber" id="desmosNum">0</p>
+          </div>
+          <div class="textDiv">
+            <p class="cardText">Desmos</p><br>
+            <p class="cardCost" id="desmosCost">p = 2097152</p>
+          </div>
+          <div class="cardImageHolder">
+            <img class="cardImage" src="media/desmos.png">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="upgradesMenu invisible" id="upgMenu">
+
         <!--Box Method Upgrade-->
-          <div class="productionCard transparent" id="boxUpg" onClick="buyBox()">
-            <div class="textDiv">
-              <p class="cardText">Box Method</p><br><p class="cardCost" id="boxCost">p = 256</p>
-            </div>
-            <div class="cardImageHolder">
-              <img class="cardImage" src="media/box-method.png">
-            </div>
+        <div class="productionCard transparent" id="boxUpg" onClick="buyBox()">
+          <div class="textDiv">
+            <p class="cardText">Box Method</p><br>
+            <p class="cardCost" id="boxCost">p = 256</p>
           </div>
-          
-           <!--Pythagorean Theorem Upgrade-->
-          <div class="productionCard transparent" id="pythUpg" onClick="buyPyth()">
-            <div class="textDiv">
-              <p class="cardText">Pythagorean<br>Theorem</p><br><p class="cardCost" id="pythCost">p = 2048</p>
-            </div>
-            <div class="cardImageHolder">
-              <img class="cardImage" src="media/pythag.png">
-            </div>
+          <div class="cardImageHolder">
+            <img class="cardImage" src="media/box-method.png">
           </div>
-          
-          <!--Quadriatic Formula Upgrade-->
-          <div class="productionCard transparent" id="quadUpg" onClick="buyQuad()">
-            <div class="textDiv">
-              <p class="cardText">Quadratic<br>Formula</p><br><p class="cardCost" id="quadCost">p = 32768</p>
-            </div>
-            <div class="cardImageHolder cardImageHolderQuad">
-              <img class="cardImage cardImageQuad" src="media/quadformula.png">
-            </div>
+        </div>
+
+        <!--Pythagorean Theorem Upgrade-->
+        <div class="productionCard transparent" id="pythUpg" onClick="buyPyth()">
+          <div class="textDiv">
+            <p class="cardText">Pythagorean<br>Theorem</p><br>
+            <p class="cardCost" id="pythCost">p = 2048</p>
           </div>
-          
-          <!--Unit Circle Upgrade-->
-          <div class="productionCard transparent" id="circleUpg" onClick="buyCircle()">
-            <div class="textDiv">
-              <p class="cardText">Unit Circle</p><br><p class="cardCost" id="circleCost">p = 1048576</p>
-            </div>
-            <div class="cardImageHolder cardImageHolderCircle">
-              <img class="cardImage" src="media/unitcircle.png">
-            </div>
+          <div class="cardImageHolder">
+            <img class="cardImage" src="media/pythag.png">
           </div>
-          
-          <!--Cubic Formula Upgrade-->
-          <div class="productionCard transparent" id="cubicUpg" onClick="buyCubic()">
-            <div class="textDiv">
-              <p class="cardText">Cubic<br>Formula</p><br><p class="cardCost" id="cubicCost">p = 2097152</p>
-            </div>
-            <div class="cardImageHolder cardImageHolderQuad">
-              <img class="cardImage cardImageQuad" src="media/cubic.gif">
-            </div>
+        </div>
+
+        <!--Quadriatic Formula Upgrade-->
+        <div class="productionCard transparent" id="quadUpg" onClick="buyQuad()">
+          <div class="textDiv">
+            <p class="cardText">Quadratic<br>Formula</p><br>
+            <p class="cardCost" id="quadCost">p = 32768</p>
+          </div>
+          <div class="cardImageHolder cardImageHolderQuad">
+            <img class="cardImage cardImageQuad" src="media/quadformula.png">
+          </div>
+        </div>
+
+        <!--Unit Circle Upgrade-->
+        <div class="productionCard transparent" id="circleUpg" onClick="buyCircle()">
+          <div class="textDiv">
+            <p class="cardText">Unit Circle</p><br>
+            <p class="cardCost" id="circleCost">p = 1048576</p>
+          </div>
+          <div class="cardImageHolder cardImageHolderCircle">
+            <img class="cardImage" src="media/unitcircle.png">
+          </div>
+        </div>
+
+        <!--Cubic Formula Upgrade-->
+        <div class="productionCard transparent" id="cubicUpg" onClick="buyCubic()">
+          <div class="textDiv">
+            <p class="cardText">Cubic<br>Formula</p><br>
+            <p class="cardCost" id="cubicCost">p = 2097152</p>
+          </div>
+          <div class="cardImageHolder cardImageHolderQuad">
+            <img class="cardImage cardImageQuad" src="media/cubic.gif">
           </div>
         </div>
       </div>
     </div>
-      <script>
-  // Create base variables
-var p = 0;
-var ppc = 1;
+  </div>
+  <script src="./script.js"></script>
+</body>
 
-// Production
-var pencils = 0;
-var phones = 0;
-var calc1 = 0;
-var calc2 = 0;
-var calc3 = 0;
-var desmos = 0;
-
-// Upgrades
-var boxMethod = false;
-var pyth = false;
-var quadratic = false;
-var circle = false;
-var cubic = false;
-
-// Update the screen and start the autoclicking process
-update();
-setInterval(autoClick, 1000/30);
-
-// Runs when the button is clicked
-function buttonClick() {
-  p += ppc;
-  update();
-}
-
-// Updates the screen with all of the current variable information
-function update() {
-	// Handles displaying large numbers in scientific notation
-  if (p < 10000) {
-		document.getElementById("points").innerHTML = Math.round(p);
-  } else {
-  	var scientificNotation = p/10**(Math.round(p).toString().length-1);
-		document.getElementById("points").innerHTML = scientificNotation.toFixed(1) + "*10<sup>"+(Math.round(p).toString().length-1)+"</sup>";
-  }
-  
-  // Display amount of Production pieces
-  document.getElementById("pencilNum").innerHTML = pencils;
-  document.getElementById("phoneNum").innerHTML = phones;
-  document.getElementById("calc1Num").innerHTML = calc1;
-  document.getElementById("calc2Num").innerHTML = calc2;
-  document.getElementById("calc3Num").innerHTML = calc3;
-  document.getElementById("desmosNum").innerHTML = desmos;
-  
-  // Display production costs
-  document.getElementById("pencilCost").innerHTML = "p = "+ Math.round(16*1.5**pencils);
-  document.getElementById("phoneCost").innerHTML = "p = "+ Math.round(256*1.5**phones);
-  document.getElementById("calc1Cost").innerHTML = "p = "+ Math.round(2048*1.5**calc1);
-  document.getElementById("calc2Cost").innerHTML = "p = "+ Math.round(16384*1.5**calc2);
-  document.getElementById("calc3Cost").innerHTML = "p = "+ Math.round(131072*1.5**calc3);
-  document.getElementById("desmosCost").innerHTML = "p = "+ Math.round(2097152*1.5**desmos);
-  
-  // Handle transparency for production cards
-  if (p >= Math.round(16*1.5**pencils)) {
-		document.getElementById("pencilCard").classList.remove("transparent");
-  } else {
-		document.getElementById("pencilCard").classList.add("transparent");  
-  }
-  if (p >= Math.round(256*1.5**phones)) {
-		document.getElementById("phoneCard").classList.remove("transparent");
-  } else {
-		document.getElementById("phoneCard").classList.add("transparent");  
-  }
-  if (p >= Math.round(2048*1.5**calc1)) {
-		document.getElementById("calc1Card").classList.remove("transparent");
-  } else {
-		document.getElementById("calc1Card").classList.add("transparent");  
-  }
-  if (p >= Math.round(16384*1.5**calc2)) {
-		document.getElementById("calc2Card").classList.remove("transparent");
-  } else {
-		document.getElementById("calc2Card").classList.add("transparent");  
-  }
-  if (p >= Math.round(131072*1.5**calc3)) {
-		document.getElementById("calc3Card").classList.remove("transparent");
-  } else {
-		document.getElementById("calc3Card").classList.add("transparent");  
-  }
-  if (p >= Math.round(2097152*1.5**desmos)) {
-		document.getElementById("desmosCard").classList.remove("transparent");
-  } else {
-		document.getElementById("desmosCard").classList.add("transparent");  
-  }
-  
-  // Handle transparency for upgrade cards
-  if (p >= 256 && boxMethod == false) {
-		document.getElementById("boxUpg").classList.remove("transparent");
-  } else {
-		document.getElementById("boxUpg").classList.add("transparent");  
-  }
-  if (p >= 2048 && pyth == false && boxMethod == true) {
-		document.getElementById("pythUpg").classList.remove("transparent");
-  } else {
-		document.getElementById("pythUpg").classList.add("transparent");  
-  }
-  if (p >= 32768 && quadratic == false && pyth == true) {
-		document.getElementById("quadUpg").classList.remove("transparent");
-  } else {
-		document.getElementById("quadUpg").classList.add("transparent");  
-  }
-  if (p >= 1048576 && circle == false && quadratic == true) {
-		document.getElementById("circleUpg").classList.remove("transparent");
-  } else {
-		document.getElementById("circleUpg").classList.add("transparent");  
-  }
-  if (p >= 2097152 && cubic == false && circle == true) {
-		document.getElementById("cubicUpg").classList.remove("transparent");
-  } else {
-		document.getElementById("cubicUpg").classList.add("transparent");  
-  }
-  
-  // Display points per second
-  document.getElementById("pointRate").innerHTML = "("+(pencils+phones*2+calc1*16+calc2*128+calc3*1024+desmos*32768)+"/sec)";
-}
-
-// Change visibilities if production tab is clicked
-function prodButton() {
-	document.getElementById("prodTab").classList.add("selected");
-	document.getElementById("upgTab").classList.remove("selected");
-	document.getElementById("upgMenu").classList.add("invisible");
-	document.getElementById("prodMenu").classList.remove("invisible");
-}
-
-// Change visibilities if upgrade tab is clicked
-function upgButton() {
-	document.getElementById("upgTab").classList.add("selected");
-	document.getElementById("prodTab").classList.remove("selected");
-	document.getElementById("prodMenu").classList.add("invisible");
-	document.getElementById("upgMenu").classList.remove("invisible");
-}
-
-// Functions for purchasing production
-function buyPencil() {
-	if (p >= Math.round(16*1.5**pencils)) {
-    p -= Math.round(16*1.5**pencils);
-  	pencils++;
-    update();
-  }
-}
-
-function buyPhone() {
-	if (p >= Math.round(256*1.5**phones)) {
-    p -= Math.round(256*1.5**phones);
-  	phones++;
-    update();
-  }
-}
-
-function buyCalc1() {
-	if (p >= Math.round(2048*1.5**calc1)) {
-    p -= Math.round(2048*1.5**calc1);
-  	calc1++;
-    update();
-  }
-}
-
-function buyCalc2() {
-	if (p >= Math.round(16384*1.5**calc2)) {
-    p -= Math.round(16384*1.5**calc2);
-  	calc2++;
-    update();
-  }
-}
-
-function buyCalc3() {
-	if (p >= Math.round(131072*1.5**calc3)) {
-    p -= Math.round(131072*1.5**calc3);
-  	calc3++;
-    update();
-  }
-}
-
-function buyDesmos() {
-	if (p >= Math.round(2097152*1.5**desmos)) {
-    p -= Math.round(2097152*1.5**desmos);
-  	desmos++;
-    update();
-  }
-}
-
-// Functions for purchasing upgrades
-function buyBox() {
-	if (p >= 256 && boxMethod == false) {
-    p -= 256;
-  	boxMethod = true;
-    ppc = 2;
-	document.getElementById("boxUpg").classList.add("invisible");
-    update();
-	document.getElementById("buttonText").innerHTML = "$$&#8721;↙{n=0}↖&infin;"+ppc+"$$";
-	jqMath.parseMath(document.body);
-  }
-}
-
-function buyPyth() {
-	if (p >= 2048 && boxMethod == true && pyth == false) {
-  	p -= 2048;
-  	pyth = true;
-    ppc = 4;
-	document.getElementById("pythUpg").classList.add("invisible");
-    update();
-	document.getElementById("buttonText").innerHTML = "$$&#8721;↙{n=0}↖&infin;"+ppc+"$$";
-	jqMath.parseMath(document.body);
-  }
-}
-
-function buyQuad() {
-	if (p >= 32768 && pyth == true && quadratic == false) {
-    p -= 32768;
-  	quadratic = true;
-    ppc = 8;
-	document.getElementById("quadUpg").classList.add("invisible");
-    update();
-	document.getElementById("buttonText").innerHTML = "$$&#8721;↙{n=0}↖&infin;"+ppc+"$$";
-	jqMath.parseMath(document.body);
-  }
-}
-
-function buyCircle() {
-	if (p >= 1048576 && circle == false && quadratic == true) {
-    p -= 1048576;
-  	circle  = true;
-    ppc = 16;
-	document.getElementById("circleUpg").classList.add("invisible");
-    update();
-	document.getElementById("buttonText").innerHTML = "$$&#8721;↙{n=0}↖&infin;"+ppc+"$$";
-	jqMath.parseMath(document.body);
-  }
-}
-
-function buyCubic() {
-	if (p >= 2097152 && cubic == false && circle == true) {
-    p -= 2097152;
-  	cubic  = true;
-    ppc = 32;
-	document.getElementById("cubicUpg").classList.add("invisible");
-    update();
-	document.getElementById("buttonText").innerHTML = "$$&#8721;↙{n=0}↖&infin;"+ppc+"$$";
-	jqMath.parseMath(document.body);
-  }
-}
-
-// Autoclicks 30 times per second
-function autoClick() {
-	p += (pencils)/30+(phones*2)/30+(calc1*16)/30+(calc2*128)/30+(calc3*1024)/30+(desmos*32768)/30;
-  update();
-}
-
-
-
-  </script>
-  </body>
 </html>

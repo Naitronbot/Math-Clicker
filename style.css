@@ -1,0 +1,201 @@
+.mainWindow {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+    height: 100vh;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+}
+
+.buttonContainer {
+    background-color: #116466;
+    width: min(30vw, 300px);
+    height: min(20vw, 200px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.buttonContainer p {
+    font-size: min(6vw, 60px);
+}
+
+.pointsWindow {
+    background-color: white;
+    width: min(25vw, 250px);
+    height: min(12vw, 120px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: solid 1px black;
+    margin: 35px;
+}
+
+.pointsText {
+    font-size: min(4vw, 40px);
+    margin: 0;
+    color: black;
+}
+
+.pps {
+    font-size: min(2vw, 20px);
+}
+
+h1 {
+    text-align: center;
+    font-weight: lighter;
+    font-size: min(6vw, 60px);
+    color: white;
+    margin: 35px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.gameWindow {
+    order: 1;
+    background-color: #2C3531;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-y: auto;
+}
+
+p {
+    display: inline-block;
+    white-space: pre;
+    color: #D1E8E2;
+}
+
+.menuWindow {
+    order: 2;
+    background-color: #116466;
+    width: 40vw;
+    max-width: 350px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+div,
+h1 {
+    display: inline-block;
+    text-align: center;
+}
+
+.imaginary {
+    font-size: min(3.5vw, 35px);
+}
+
+.menuTabs {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+.tab {
+    width: 50%;
+    cursor: pointer;
+    font-size: min(2.5vw, 25px);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.productionMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.upgradesMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.productionCard {
+    width: 87.5%;
+    padding: 7.5px;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    cursor: pointer;
+    padding-top: min(1vw, 10px);
+    padding-bottom: min(1vw, 10px);
+}
+
+.selected {
+    background: rgba(0, 0, 0, 0);
+}
+
+.cardImageHolder {
+    width: min(8vw, 80px);
+    height: min(8vw, 80px);
+    background-color: #D1E8E2;
+    border-radius: 10px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.cardImage {
+    height: min(8vw, 80px);
+}
+
+.cardText {
+    font-size: min(2.5vw, 25px);
+}
+
+.invisible {
+    display: none;
+}
+
+.textDiv p {
+    margin: 0;
+}
+
+.cardCost {
+    font-size: min(2vw, 20px);
+}
+
+.prodNumber {
+    font-size: min(5vw, 50px);
+    margin: 0;
+}
+
+.transparent {
+    opacity: 0.25;
+    cursor: default;
+}
+
+.cardImageQuad {
+    height: auto;
+    width: min(12vw, 120px);
+}
+
+.cardImageHolderQuad {
+    width: min(12vw, 120px);
+}
+
+/*
+  https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+  Flexbox tutorial
+  */
